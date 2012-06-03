@@ -1,0 +1,2 @@
+class UserBannedList < ActiveRecord::Base
+end

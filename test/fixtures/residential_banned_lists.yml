@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  begin_time: 2012-06-02 11:25:51
+  end_time: 2012-06-02 11:25:51
+  description: MyText
+  enabled: 
+  residential_id: 1
+  visitor_id: 1
+  residential_banned_status_id: 1
+
+two:
+  begin_time: 2012-06-02 11:25:51
+  end_time: 2012-06-02 11:25:51
+  description: MyText
+  enabled: 
+  residential_id: 1
+  visitor_id: 1
+  residential_banned_status_id: 1

@@ -1,0 +1,25 @@
+- model_class = @agent.class
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human
+
+%p
+  %strong= model_class.human_attribute_name(:name) + ':'
+  %br
+  = @agent.name
+%p
+  %strong= model_class.human_attribute_name(:password) + ':'
+  %br
+  = @agent.password
+%p
+  %strong= model_class.human_attribute_name(:description) + ':'
+  %br
+  = @agent.description
+%p
+  %strong= model_class.human_attribute_name(:residential_id) + ':'
+  %br
+  = @agent.residential_id
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), agent_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_agent_path(@agent), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), agent_path(@agent), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger'

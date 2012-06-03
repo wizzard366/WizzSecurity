@@ -1,0 +1,29 @@
+%h1 Listing visitors
+
+%table
+  %tr
+    %th Name
+    %th Identification
+    %th Idpictureurl
+    %th Residential
+    %th User
+    %th Visitor status
+    %th
+    %th
+    %th
+
+  - @visitors.each do |visitor|
+    %tr
+      %td= visitor.name
+      %td= visitor.identification
+      %td= visitor.idpictureurl
+      %td= visitor.residential_id
+      %td= visitor.user_id
+      %td= visitor.visitor_status_id
+      %td= link_to 'Show', visitor
+      %td= link_to 'Edit', edit_visitor_path(visitor)
+      %td= link_to 'Destroy', visitor, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Visitor', new_visitor_path

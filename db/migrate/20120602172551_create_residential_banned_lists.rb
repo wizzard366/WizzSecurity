@@ -1,0 +1,15 @@
+class CreateResidentialBannedLists < ActiveRecord::Migration
+  def change
+    create_table :residential_banned_lists do |t|
+      t.datetime :begin_time
+      t.datetime :end_time
+      t.text :description
+      t.integer :enabled
+      t.integer :residential_id
+      t.integer :visitor_id
+      t.integer :residential_banned_status_id
+
+      t.timestamps
+    end
+  end
+end

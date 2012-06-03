@@ -1,0 +1,31 @@
+- model_class = Residential.new.class
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:address)
+      %th= model_class.human_attribute_name(:description)
+      %th= model_class.human_attribute_name(:enabled)
+      %th= model_class.human_attribute_name(:password)
+      %th= model_class.human_attribute_name(:residential_type_id)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @residentials.each do |residential|
+      %tr
+        %td= link_to residential.id, residential_path(residential)
+        %td= residential.name
+        %td= residential.address
+        %td= residential.description
+        %td= residential.enabled
+        %td= residential.password
+        %td= residential.residential_type_id
+        %td=l residential.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_residential_path(residential), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), residential_path(residential), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_residential_path, :class => 'btn btn-primary'

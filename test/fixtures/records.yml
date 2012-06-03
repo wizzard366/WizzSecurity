@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  entrance: 2012-06-02 12:37:49
+  exit: 2012-06-02 12:37:49
+  plate_number: MyString
+  visitor_id: 1
+  user_id: 1
+  residential_id: 1
+
+two:
+  entrance: 2012-06-02 12:37:49
+  exit: 2012-06-02 12:37:49
+  plate_number: MyString
+  visitor_id: 1
+  user_id: 1
+  residential_id: 1

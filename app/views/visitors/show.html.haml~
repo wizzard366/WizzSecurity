@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @visitor.name
+%p
+  %b Identification:
+  = @visitor.identification
+%p
+  %b Idpictureurl:
+  = @visitor.idpictureurl
+%p
+  %b Residential:
+  = @visitor.residential_id
+%p
+  %b User:
+  = @visitor.user_id
+%p
+  %b Visitor status:
+  = @visitor.visitor_status_id
+
+= link_to 'Edit', edit_visitor_path(@visitor)
+\|
+= link_to 'Back', visitors_path

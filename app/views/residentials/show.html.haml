@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @residential.name
+%p
+  %b Address:
+  = @residential.address
+%p
+  %b Type:
+  = @residential.residential_type_id
+%p
+  %b Description:
+  = @residential.description
+%p
+  %b Enabled:
+  = @residential.enabled
+%p
+  %b Password:
+  = @residential.password
+
+= link_to 'Edit', edit_residential_path(@residential)
+\|
+= link_to 'Back', residentials_path

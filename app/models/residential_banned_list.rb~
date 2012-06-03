@@ -1,0 +1,3 @@
+class ResidentialBannedList < ActiveRecord::Base
+  
+end

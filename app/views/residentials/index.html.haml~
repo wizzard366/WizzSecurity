@@ -1,0 +1,29 @@
+%h1 Listing residentials
+
+%table
+  %tr
+    %th Name
+    %th Address
+    %th Type
+    %th Description
+    %th Enabled
+    %th Password
+    %th
+    %th
+    %th
+
+  - @residentials.each do |residential|
+    %tr
+      %td= residential.name
+      %td= residential.address
+      %td= residential.type
+      %td= residential.description
+      %td= residential.enabled
+      %td= residential.password
+      %td= link_to 'Show', residential
+      %td= link_to 'Edit', edit_residential_path(residential)
+      %td= link_to 'Destroy', residential, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Residential', new_residential_path

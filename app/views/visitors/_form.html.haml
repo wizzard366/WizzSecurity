@@ -1,0 +1,28 @@
+= form_for @visitor do |f|
+  -if @visitor.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@visitor.errors.count, "error")} prohibited this visitor from being saved:"
+      %ul
+        - @visitor.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :identification
+    = f.text_field :identification
+  .field
+    = f.label :idpictureurl
+    = f.text_field :idpictureurl
+  .field
+    = f.label :residential_id
+    = f.number_field :residential_id
+  .field
+    = f.label :user_id
+    = f.number_field :user_id
+  .field
+    = f.label :visitor_status_id
+    = f.number_field :visitor_status_id
+  .actions
+    = f.submit 'Save'

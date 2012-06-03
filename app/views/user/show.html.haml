@@ -1,0 +1,41 @@
+- model_class = @user.class
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human
+
+%p
+  %strong= model_class.human_attribute_name(:name) + ':'
+  %br
+  = @user.name
+%p
+  %strong= model_class.human_attribute_name(:address) + ':'
+  %br
+  = @user.address
+%p
+  %strong= model_class.human_attribute_name(:password) + ':'
+  %br
+  = @user.password
+%p
+  %strong= model_class.human_attribute_name(:enabled) + ':'
+  %br
+  = @user.enabled
+%p
+  %strong= model_class.human_attribute_name(:telephone) + ':'
+  %br
+  = @user.telephone
+%p
+  %strong= model_class.human_attribute_name(:habitants_number) + ':'
+  %br
+  = @user.habitants_number
+%p
+  %strong= model_class.human_attribute_name(:residential_id) + ':'
+  %br
+  = @user.residential_id
+%p
+  %strong= model_class.human_attribute_name(:user_status_id) + ':'
+  %br
+  = @user.user_status_id
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), user_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_user_path(@user), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), user_path(@user), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger'

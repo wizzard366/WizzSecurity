@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @admin.name
+%p
+  %b User name:
+  = @admin.user_name
+%p
+  %b Password:
+  = @admin.password
+%p
+  %b Description:
+  = @admin.description
+%p
+  %b Residential:
+  = @admin.residential_id
+%p
+  %b Admin status:
+  = @admin.admin_status_id
+
+= link_to 'Edit', edit_admin_path(@admin)
+\|
+= link_to 'Back', admins_path

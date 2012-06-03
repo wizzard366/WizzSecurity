@@ -1,0 +1,2 @@
+class VisitorStatus < ActiveRecord::Base
+end

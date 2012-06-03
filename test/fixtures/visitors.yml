@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  identification: MyString
+  idpictureurl: MyString
+  residential_id: 1
+  user_id: 1
+  visitor_status_id: 1
+
+two:
+  name: MyString
+  identification: MyString
+  idpictureurl: MyString
+  residential_id: 1
+  user_id: 1
+  visitor_status_id: 1

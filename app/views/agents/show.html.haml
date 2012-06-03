@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @agent.name
+%p
+  %b Password:
+  = @agent.password
+%p
+  %b Description:
+  = @agent.description
+%p
+  %b Residential:
+  = @agent.residential_id
+
+= link_to 'Edit', edit_agent_path(@agent)
+\|
+= link_to 'Back', agents_path

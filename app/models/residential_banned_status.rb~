@@ -1,0 +1,3 @@
+class ResidentialBannedStatus < ActiveRecord::Base
+  has_may :residentials
+end

@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @user.name
+%p
+  %b Address:
+  = @user.address
+%p
+  %b Password:
+  = @user.password
+%p
+  %b Enabled:
+  = @user.enabled
+%p
+  %b Telephone:
+  = @user.telephone
+%p
+  %b Habitants number:
+  = @user.habitants_number
+%p
+  %b Residential:
+  = @user.residential_id
+%p
+  %b User status:
+  = @user.user_status_id
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path
