@@ -8,7 +8,7 @@
   = @residential.address
 %p
   %b Type:
-  = @residential.type
+  = @residential.residential_type_id
 %p
   %b Description:
   = @residential.description

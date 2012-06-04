@@ -1,0 +1,5 @@
+alert('funciona el form de salida')
+$('#visitor_identification').attr("value","");
+$('#visitor_name').attr("value","");
+$('#modalbody').append("#{escape_javascript(render :partial=>'result')}");
+$('#ResultModal').modal('show')

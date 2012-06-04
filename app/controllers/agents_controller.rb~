@@ -83,8 +83,8 @@ class AgentsController < ApplicationController
   def setout
     
     @empty_array=[]
-    @visitor_name=params[:visitors][:name]
-    @visitor_id=params[:visitors][:identification]
+    @visitor_name=params[:visitor][:name]
+    @visitor_id=params[:visitor][:identification]
     @agent=Agent.find(params[:id])
     
     @res=Visitor.where("name=:name AND identification=:ids",{:name=>@visitor_name,:ids=>@visitor_id})

@@ -1,0 +1,6 @@
+
+var id="item_";
+var ap=@item.toStrin();
+var srt=id.concat(ap);
+alert(srt);
+$('srt').remove();

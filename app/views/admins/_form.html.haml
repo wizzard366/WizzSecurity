@@ -1,28 +1,28 @@
-= form_for @admin do |f|
-  -if @admin.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@admin.errors.count, "error")} prohibited this admin from being saved:"
-      %ul
-        - @admin.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :user_name
-    = f.text_field :user_name
-  .field
-    = f.label :password
-    = f.text_field :password
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :residential_id
-    = f.number_field :residential_id
-  .field
-    = f.label :admin_status_id
-    = f.number_field :admin_status_id
-  .actions
-    = f.submit 'Save'
+= form_for @admin, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :name, :class => 'control-label'
+    .controls
+      = f.text_field :name, :class => 'text_field'
+  .control-group
+    = f.label :user_name, :class => 'control-label'
+    .controls
+      = f.text_field :user_name, :class => 'text_field'
+  .control-group
+    = f.label :password, :class => 'control-label'
+    .controls
+      = f.text_field :password, :class => 'text_field'
+  .control-group
+    = f.label :description, :class => 'control-label'
+    .controls
+      = f.text_area :description, :class => 'text_area'
+  .control-group
+    = f.label :residential_id, :class => 'control-label'
+    .controls
+      = f.number_field :residential_id, :class => 'number_field'
+  .control-group
+    = f.label :admin_status_id, :class => 'control-label'
+    .controls
+      = f.number_field :admin_status_id, :class => 'number_field'
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), admins_path, :class => 'btn'

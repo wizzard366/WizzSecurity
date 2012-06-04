@@ -1,0 +1,26 @@
+%p
+  Ingrese los datos requeridos para marcar un ingreso. Debe llenar todos y cada uno de los datos requeridos. Si el solicitante no le puede dar todos los datos, NO se le permitira el acceso.
+    
+  =form_for @agent, :url => setrecord_agent_path,:html => { :method=>'put',:class => 'well.form-vertical' ,:remote=> true} do |f|
+    .controls
+      %p
+        %span.label.label-important
+          Nombre
+      =text_field :visitor,:name
+    .controls
+      %p
+        %span.label.label-important
+          Doc. Identificacion:
+      =text_field :visitor, :identification
+    .controls
+      %p
+        %span.label.label-important
+          Placas:
+      =text_field :record, :plate_number
+    .controls
+      %p
+        %span.label.label-important
+          Direccion a la que se dirije
+      =text_field :user,:address
+    .form-actions
+      = f.submit "Solicitar Ingreso", :class => 'btn btn-primary'

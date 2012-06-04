@@ -84,8 +84,7 @@ class UsersController < ApplicationController
     @emptyarray=[]
     @user=User.find(params[:id])
     if (@vis=Visitor.where("name=:visitor_name",{:visitor_name=>params[:visitor][:name]})) != @emptyarray
-      @viss=@vis[0]
-      @user.banned_visitors<<@viss
+      @user.banned_visitors<<@vis[0]
     else
       @viss=Visitor.new(:name=>params[:visitor][:name],:visitor_status_id=>1)
       @viss.save

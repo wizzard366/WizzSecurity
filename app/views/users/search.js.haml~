@@ -1,0 +1,4 @@
+alert("si corrio para el controlador de la busqueda");
+$('#searchDateFormModal').modal('hide');
+$('#visitorRecord_table tbody').empty()
+$('#visitorRecord_table tbody').append("#{escape_javascript(render :partial=>'setresult')}");

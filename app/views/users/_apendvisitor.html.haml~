@@ -1,0 +1,6 @@
+-t=@viss[0]
+%tr{:id=>"item_#{t.id}"}
+  %td= link_to t.name, visitor_path(t)
+  %td= t.identification
+  %td= t.visitor_status.name
+  %td= link_to "Eliminar",supbanned_url(:user_id=>@user.id,:visitor_id=>t.id),:class => 'btn btn-danger',:remote=>true, :onclick=>"$('#item_#{t.id}').remove();"

@@ -1,0 +1,6 @@
+alert("funciona el for");
+$('#visitor_name').attr("value","");
+$('#visitor_identification').attr("value","");
+$('#record_plate_number').attr("value","");
+$('#user_address').attr("value","");
+$('#ResultModal').modal('show');

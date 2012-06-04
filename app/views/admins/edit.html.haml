@@ -1,7 +1,4 @@
-%h1 Editing admin
-
-= render 'form'
-
-= link_to 'Show', @admin
-\|
-= link_to 'Back', admins_path
+- model_class = @admin.class
+.page-header
+  %h1=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human, :default => "Edit #{model_class.model_name.human}")
+= render :partial => "form"

@@ -1,0 +1,22 @@
+-if @result==0
+  %h1 El visitante NO puede ingresar!!! 
+  %h6 La direccion a la que se dirije no existe.
+-else
+  -if @result==1
+    %h1 El visitante NO puede ingresar!!!
+    %h6 El residencial le ha restringido el acceso.
+  -else 
+    -if @result==2
+      %h1 El visitante NO puede ingresar!!!
+      %h6 La direccion a la que se dirije le ha restringido el acceso.
+    -else
+      -if @result==4
+        %h1 El visitante ha marcado salida satisfactoriamente
+        %h6 Salida = #{@DateTime.now} (aa-mm-dd hh:mm)
+      -else
+        -if @result==5
+          %h1 La salida no se marco.
+          %h6 Hubo un problema al intentar marcar la salida, por favor verifique los datos ingresados.
+        -else
+          %h1 Puede ingresar sin ningun problema!!
+          %h6 El visitante fue autorizado para poder ingresar al residencial.

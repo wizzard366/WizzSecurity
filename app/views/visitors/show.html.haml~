@@ -1,24 +1,29 @@
-%p#notice= notice
+- model_class = @visitor.class
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human
 
 %p
-  %b Name:
+  %strong= model_class.human_attribute_name(:name) + ':'
+  %br
   = @visitor.name
 %p
-  %b Identification:
+  %strong= model_class.human_attribute_name(:identification) + ':'
+  %br
   = @visitor.identification
 %p
-  %b Idpictureurl:
+  %strong= model_class.human_attribute_name(:idpictureurl) + ':'
+  %br
   = @visitor.idpictureurl
 %p
-  %b Residential:
+  %strong= model_class.human_attribute_name(:residential_id) + ':'
+  %br
   = @visitor.residential_id
 %p
-  %b User:
-  = @visitor.user_id
-%p
-  %b Visitor status:
+  %strong= model_class.human_attribute_name(:visitor_status_id) + ':'
+  %br
   = @visitor.visitor_status_id
 
-= link_to 'Edit', edit_visitor_path(@visitor)
-\|
-= link_to 'Back', visitors_path
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), visitors_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_visitor_path(@visitor), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), visitor_path(@visitor), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger'

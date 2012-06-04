@@ -1,24 +1,33 @@
-%p#notice= notice
+- model_class = @admin.class
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human
 
 %p
-  %b Name:
+  %strong= model_class.human_attribute_name(:name) + ':'
+  %br
   = @admin.name
 %p
-  %b User name:
+  %strong= model_class.human_attribute_name(:user_name) + ':'
+  %br
   = @admin.user_name
 %p
-  %b Password:
+  %strong= model_class.human_attribute_name(:password) + ':'
+  %br
   = @admin.password
 %p
-  %b Description:
+  %strong= model_class.human_attribute_name(:description) + ':'
+  %br
   = @admin.description
 %p
-  %b Residential:
+  %strong= model_class.human_attribute_name(:residential_id) + ':'
+  %br
   = @admin.residential_id
 %p
-  %b Admin status:
+  %strong= model_class.human_attribute_name(:admin_status_id) + ':'
+  %br
   = @admin.admin_status_id
 
-= link_to 'Edit', edit_admin_path(@admin)
-\|
-= link_to 'Back', admins_path
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), admins_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_path(@admin), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_path(@admin), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger'

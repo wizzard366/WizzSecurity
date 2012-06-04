@@ -1,0 +1,8 @@
+- @records.order("entrance DESC").each do |t|
+          %tr
+            %td= link_to t.visitor.name, visitor_path(t.visitor)
+            %td= t.visitor.identification
+            %td= t.plate_number
+            %td= t.entrance
+            %td= t.exit
+            %td= t.visitor.visitor_status.name

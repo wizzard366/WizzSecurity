@@ -1,5 +1,4 @@
-%h1 New admin
-
-= render 'form'
-
-= link_to 'Back', admins_path
+- model_class = @admin.class
+.page-header
+  %h1=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human, :default => "New #{model_class.model_name.human}")
+= render :partial => "form"

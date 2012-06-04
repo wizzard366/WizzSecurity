@@ -1,28 +1,24 @@
-= form_for @visitor do |f|
-  -if @visitor.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@visitor.errors.count, "error")} prohibited this visitor from being saved:"
-      %ul
-        - @visitor.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :identification
-    = f.text_field :identification
-  .field
-    = f.label :idpictureurl
-    = f.text_field :idpictureurl
-  .field
-    = f.label :residential_id
-    = f.number_field :residential_id
-  .field
-    = f.label :user_id
-    = f.number_field :user_id
-  .field
-    = f.label :visitor_status_id
-    = f.number_field :visitor_status_id
-  .actions
-    = f.submit 'Save'
+= form_for @visitor, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :name, :class => 'control-label'
+    .controls
+      = f.text_field :name, :class => 'text_field'
+  .control-group
+    = f.label :identification, :class => 'control-label'
+    .controls
+      = f.text_field :identification, :class => 'text_field'
+  .control-group
+    = f.label :idpictureurl, :class => 'control-label'
+    .controls
+      = f.text_field :idpictureurl, :class => 'text_field'
+  .control-group
+    = f.label :residential_id, :class => 'control-label'
+    .controls
+      = f.number_field :residential_id, :class => 'number_field'
+  .control-group
+    = f.label :visitor_status_id, :class => 'control-label'
+    .controls
+      = f.number_field :visitor_status_id, :class => 'number_field'
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), visitors_path, :class => 'btn'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120602202525) do
+ActiveRecord::Schema.define(:version => 20120603171539) do
 
   create_table "admin_statuses", :force => true do |t|
     t.string   "name"
@@ -130,7 +130,6 @@ ActiveRecord::Schema.define(:version => 20120602202525) do
     t.string   "name"
     t.string   "identification"
     t.string   "idpictureurl"
-    t.integer  "residential_id"
     t.integer  "visitor_status_id"
     t.datetime "created_at"
     t.datetime "updated_at"
