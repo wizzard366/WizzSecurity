@@ -83,8 +83,8 @@ class AgentsController < ApplicationController
   def setout
     
     @empty_array=[]
-    @visitor_name=params[:visitor][:name]
-    @visitor_id=params[:visitor][:identification]
+    @visitor_name=params[:visitors][:name]
+    @visitor_id=params[:visitors][:identification]
     @agent=Agent.find(params[:id])
     
     @res=Visitor.where("name=:name AND identification=:ids",{:name=>@visitor_name,:ids=>@visitor_id})
@@ -121,7 +121,7 @@ class AgentsController < ApplicationController
     print "************************************************"
     if @user!=@empty_array
       #see if the visitor is in the db with name and id
-      if((@vis=Visitor.where("name=:name AND identification=:ids",{:name=>@visitor_name,:ids=>@visitor_id}))!=@empty_array)
+      if((@vis=Visitor.where("name=:name AND identification=:ids",{:name=>@visitor_name,:ids=>@visitor_id}))==@empty_array)
         #if the visitor is in the db, see if he is not banned by the residential
         if((@banned=ResidentialBannedList.where("residential_id=:resid AND visitor_id=:visid",{:resid=>@agent.residential.id,:visid=>@vis[0].id}))==@empty_array)
           #se if the visitor isn't banned by the user

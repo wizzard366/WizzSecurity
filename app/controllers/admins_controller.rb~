@@ -126,7 +126,7 @@ class AdminsController < ApplicationController
   end
   def addresbanned
     @admin=Admin.find(params[:id])
-    @viss=Visitor.new(:name=>params[:visitor][:name],:visitor_status_id=>1,:identification=>params[:visitor][:identification])
+    @viss=Visitor.new(:name=>params[:visitor][:name],:visitor_status_id=>1)
     @viss.save
     @admin.residential.banned_visitors<<@viss
     respond_to do |format|

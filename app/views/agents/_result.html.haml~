@@ -12,7 +12,7 @@
     -else
       -if @result==4
         %h1 El visitante ha marcado salida satisfactoriamente
-        %h6 Salida = #{@DateTime.now} (aa-mm-dd hh:mm)
+        %h6 Salida = #{DateTime.now} (aa-mm-dd hh:mm)
       -else
         -if @result==5
           %h1 La salida no se marco.

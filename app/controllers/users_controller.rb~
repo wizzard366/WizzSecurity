@@ -44,11 +44,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
+        format.html 
+        format.js
       else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.html 
+        format.js
       end
     end
   end
@@ -84,7 +84,8 @@ class UsersController < ApplicationController
     @emptyarray=[]
     @user=User.find(params[:id])
     if (@vis=Visitor.where("name=:visitor_name",{:visitor_name=>params[:visitor][:name]})) != @emptyarray
-      @user.banned_visitors<<@vis[0]
+      @viss=@vis[0]
+      @user.banned_visitors<<@viss
     else
       @viss=Visitor.new(:name=>params[:visitor][:name],:visitor_status_id=>1)
       @viss.save
@@ -116,10 +117,7 @@ class UsersController < ApplicationController
     @end_date = DateTime.civil(params[:record][:"end(1i)"].to_i,params[:record][:"end(2i)"].to_i,params[:record][:"end(3i)"].to_i,params[:record][:"end(4i)"].to_i,params[:record][:"end(5i)"].to_i)
 
     @records=Record.where("user_id=:id AND entrance>=:start AND entrance<=:end ",{:start=>@start_date,:end=>@end_date,:id=>params[:id]}).order("entrance DESC")
-    
-    
-    
-    
+
     respond_to do |format|
       format.html
       format.js

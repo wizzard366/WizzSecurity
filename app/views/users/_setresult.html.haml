@@ -1,8 +1,8 @@
-- @records.order("entrance DESC").each do |t|
-  %tr
-    %td= link_to t.visitor.name, visitor_path(t.visitor)
-    %td= t.visitor.identification
-    %td= t.plate_number
-    %td= t.entrance
-    %td= t.exit
-    %td= t.visitor.visitor_status.name
+- @records.order("entrance DESC").each do |rec|
+  %tr{:id=>"item_#{rec.id}"}
+    %td=link_to rec.visitor.name
+    %td=rec.visitor.identification
+    %td=rec.plate_number
+    %td=rec.user.address
+    %td=rec.entrance
+    %td=rec.exit

@@ -131,10 +131,6 @@
         Nombre Completo:
         %br
         = text_field :visitor, :name
-      .controls
-        Doc. Identificacion:
-        %br
-        = text_field :visitor, :identification
       .form-actions
         = f.submit "Agregar", :class => 'btn btn-primary'
       

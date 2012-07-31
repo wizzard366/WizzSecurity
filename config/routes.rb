@@ -1,8 +1,14 @@
 WizzSecurity::Application.routes.draw do
   resources :visitors
-
-  resources :admins
   match 'users/:id/supbanned' => 'users#supbanned', :as => :supbanned
+  match 'admins/:id/supuser' => 'admins#supuser', :as => :supuser
+  match 'admins/:id/delbanned' => 'admins#delbanned', :as => :delbanned
+  resources :admins do
+    put "searchdate", :on=>:member
+    put "searchplate", :on=>:member
+    put "addresbanned", :on=>:member
+  end
+
   resources :users do
     put "addbanned" , :on=>:member
     put "search", :on=>:member

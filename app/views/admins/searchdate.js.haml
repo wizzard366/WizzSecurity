@@ -1,0 +1,3 @@
+$('#dateSearchModal').modal('hide');
+$('#visitorsTable tbody').empty()
+$('#visitorsTable tbody').append("#{escape_javascript(render :partial=>'setresult')}");

@@ -44,11 +44,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
+        format.html 
+        format.js
       else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.html 
+        format.js
       end
     end
   end
@@ -102,7 +102,7 @@ class UsersController < ApplicationController
     @entry=UserBannedList.where("user_id = :userid AND visitor_id = :visitorid",{:userid=>params[:user_id],:visitorid=>params[:visitor_id]})
     if @entry!=@emptyarray
       @item=params[:visitor_id]
-      UserBannedList.destroy(@entry)
+      UserBannedList.destroy(@entry[0])
     end
     respond_to do |format|
       format.html
@@ -117,10 +117,7 @@ class UsersController < ApplicationController
     @end_date = DateTime.civil(params[:record][:"end(1i)"].to_i,params[:record][:"end(2i)"].to_i,params[:record][:"end(3i)"].to_i,params[:record][:"end(4i)"].to_i,params[:record][:"end(5i)"].to_i)
 
     @records=Record.where("user_id=:id AND entrance>=:start AND entrance<=:end ",{:start=>@start_date,:end=>@end_date,:id=>params[:id]}).order("entrance DESC")
-    
-    
-    
-    
+
     respond_to do |format|
       format.html
       format.js

@@ -1,4 +1,4 @@
-= form_for @user,:remote=>'true', :html => { :class => 'form-horizontal' } do |f|
+= form_for @user, :html => { :class => 'form-horizontal' } do |f|
   .control-group
     = f.label "Nombre de Usuario:", :class => 'control-label'
     .controls

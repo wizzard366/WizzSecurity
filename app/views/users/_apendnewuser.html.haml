@@ -1,0 +1,10 @@
+-usr=@user
+%tr{:id=>"item_#{usr.id}"}
+  %td=usr.address
+  %td=usr.telephone
+  %td=usr.name
+  %td=usr.habitants_number
+  %td=usr.user_status.name
+  %td
+    = link_to "Editar", edit_user_path(usr), :class => 'btn btn-mini'
+    
